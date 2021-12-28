@@ -23,3 +23,16 @@ function somar(n1: number, n2: number): number{
 }
 
 let alguma = somar(10, 2);
+
+// #7 - Contextual Typing em funções anônimas
+
+let names = ['bonieky', 'pedro', 'camila', 'paulo', 90];
+
+names.forEach( function(nome){
+    if(typeof nome === 'string'){
+        console.log(nome.toUpperCase());
+    } else {
+        console.log(nome);
+    }
+});
+
