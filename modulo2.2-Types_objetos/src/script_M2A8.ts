@@ -99,3 +99,43 @@ console.log(idadeField1.value)
 let idadeField2 = document.getElementById('idade') as HTMLInputElement;
 //....
 console.log(idadeField2.value)
+
+
+
+// Aula #13 - Type Literal
+
+//EXEMPLO 1
+let nome: 'bonieky' = 'bonieky';
+
+nome = 'bonieky';
+
+nome = 'pedro';
+
+//EXEMPLO 2
+
+function mostrarTexto(
+    texto: string,
+    alinhamento: 'left' | 'right' | 'center'
+){
+    return `<div style="text-align: ${alinhamento}">${texto}</div>`;
+}
+
+mostrarTexto('Bonieky', 'center')
+mostrarTexto('Bonieky', 'right')
+mostrarTexto('Bonieky', 'blabla')
+
+//EXEMPLO 3
+
+type Opcoes = {
+    width: number,
+    height: number
+}
+
+function configurar(props: Opcoes | 'auto'){
+
+    //......
+}
+
+configurar({width: 100, height: 100});
+configurar('auto');
+configurar('automatico'); // gera erro por que não foi declarado no type literal
